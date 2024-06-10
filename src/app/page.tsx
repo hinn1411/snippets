@@ -1,5 +1,11 @@
 import { db } from "@/db";
 import Link from "next/link";
+
+// Directive for turn static route to dynamic route
+// export const dynamic = "force-dynamic";
+// people want to see up-to-date data
+// export const revalidate = 0;
+// use for front page of social media website, blogs
 export default async function Home() {
   const snippets = await db.snippet.findMany();
   console.log(snippets);
@@ -25,3 +31,5 @@ export default async function Home() {
     </div>
   );
 }
+
+
